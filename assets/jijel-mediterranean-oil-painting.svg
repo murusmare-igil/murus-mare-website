@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 875" role="img" aria-labelledby="title desc">
+  <title id="title">Oil-painting style illustration of Jijel, Algeria on the Mediterranean coast</title>
+  <desc id="desc">A painterly Mediterranean coastline with Jijel-inspired cliffs, sea, warm Algerian light, and a quiet coastal studio mood.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#f7d9a8"/>
+      <stop offset="0.45" stop-color="#f2c793"/>
+      <stop offset="1" stop-color="#9dbbd0"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#133c67"/>
+      <stop offset="0.46" stop-color="#1f6d96"/>
+      <stop offset="1" stop-color="#74b2bd"/>
+    </linearGradient>
+    <linearGradient id="stone" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#e8c58f"/>
+      <stop offset="0.54" stop-color="#c98257"/>
+      <stop offset="1" stop-color="#77513e"/>
+    </linearGradient>
+    <filter id="paint" x="-8%" y="-8%" width="116%" height="116%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="5" seed="22" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="10" xChannelSelector="R" yChannelSelector="G"/>
+      <feGaussianBlur stdDeviation="0.35"/>
+    </filter>
+    <filter id="canvas" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" seed="7" result="grain"/>
+      <feColorMatrix in="grain" type="saturate" values="0" result="mono"/>
+      <feBlend in="SourceGraphic" in2="mono" mode="soft-light"/>
+    </filter>
+  </defs>
+  <rect width="1400" height="875" fill="url(#sky)"/>
+  <g filter="url(#paint)" opacity="0.96">
+    <path d="M-80 550 C170 475 310 455 500 510 C710 570 860 496 1060 445 C1215 405 1340 430 1500 385 L1500 910 L-80 910 Z" fill="url(#sea)"/>
+    <path d="M0 625 C170 590 323 603 492 640 C690 684 870 630 1052 591 C1210 557 1317 576 1440 528 L1440 910 L0 910 Z" fill="#0f416d" opacity="0.46"/>
+    <path d="M-20 490 C90 415 176 330 270 282 C382 224 465 284 546 258 C650 225 732 125 850 120 C1004 112 1063 220 1210 224 C1310 226 1385 184 1460 150 L1460 620 C1290 614 1102 568 925 592 C690 624 545 555 360 559 C205 562 86 600 -20 660 Z" fill="url(#stone)" opacity="0.9"/>
+    <path d="M8 498 C120 438 206 357 296 320 C395 280 484 334 557 302 C657 260 729 178 848 166 C981 153 1050 255 1185 262 C1306 269 1380 217 1460 184" fill="none" stroke="#f2d6aa" stroke-width="28" opacity="0.55" stroke-linecap="round"/>
+    <path d="M214 562 L214 462 L276 462 L276 562 Z M296 565 L296 433 L370 433 L370 565 Z M394 566 L394 475 L454 475 L454 566 Z M482 566 L482 418 L560 418 L560 566 Z" fill="#f5e7ce" opacity="0.92"/>
+    <path d="M206 462 L246 424 L286 462 Z M288 433 L333 393 L380 433 Z M476 418 L521 381 L570 418 Z" fill="#b86f4f" opacity="0.88"/>
+    <path d="M234 503 h18 v31 h-18z M326 470 h20 v38 h-20z M511 458 h22 v42 h-22z" fill="#263da9" opacity="0.72"/>
+    <path d="M770 315 C815 283 903 282 962 308 C1007 328 1088 332 1168 294" fill="none" stroke="#f6ebd7" stroke-width="18" opacity="0.28"/>
+    <path d="M760 682 C874 645 1016 652 1136 690" fill="none" stroke="#dceef1" stroke-width="10" opacity="0.32"/>
+    <path d="M106 702 C279 677 390 714 561 735 C745 757 920 718 1120 714 C1250 711 1340 733 1438 753" fill="none" stroke="#f7e5c3" stroke-width="16" opacity="0.24"/>
+  </g>
+  <g opacity="0.34" filter="url(#paint)">
+    <circle cx="1065" cy="178" r="86" fill="#f4ad63"/>
+    <path d="M-40 268 C218 242 430 280 628 254 C858 223 1050 232 1450 202" fill="none" stroke="#fff2d7" stroke-width="14" stroke-linecap="round"/>
+    <path d="M-20 344 C230 321 408 364 634 336 C840 310 1014 318 1430 288" fill="none" stroke="#fff7e8" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <rect width="1400" height="875" fill="#111317" opacity="0.08" filter="url(#canvas)"/>
+</svg>

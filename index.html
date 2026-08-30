@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Custom Small Business Websites for $99/Month | Murus Mare</title>
-  <meta name="description" content="A custom five-page website for your small business, including design, development, hosting, and monthly updates for $99/month. See your homepage before you pay.">
-  <meta property="og:title" content="Custom Small Business Websites for $99/Month | Murus Mare">
-  <meta property="og:description" content="We design, build, host, and update your small business website. See the homepage before you pay. No setup fee.">
+  <title>Murus Mare | Mediterranean websites for small businesses</title>
+  <meta name="description" content="Murus Mare is a small web studio from Jijel, Algeria, building calm, useful websites for small businesses worldwide. Custom website plans from $99/month, with two months free on yearly engagement.">
+  <meta property="og:title" content="A breeze from the Mediterranean | Murus Mare">
+  <meta property="og:description" content="From Jijel, Algeria, Murus Mare designs, builds, hosts, and maintains small business websites worldwide. See the homepage before you pay.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://murusmare.com">
   <meta name="theme-color" content="#f6f7fb">
@@ -20,7 +20,7 @@
     "name": "Murus Mare",
     "url": "https://murusmare.com",
     "email": "igil@murusmare.com",
-    "description": "Custom website design, development, hosting, and maintenance for small businesses.",
+    "description": "Murus Mare is a small web studio from Jijel, Algeria, building custom website design, development, hosting, and maintenance for small businesses worldwide.",
     "areaServed": "Worldwide",
     "address": {
       "@type": "PostalAddress",
@@ -32,7 +32,7 @@
       "name": "Founding website plan",
       "price": "99",
       "priceCurrency": "USD",
-      "description": "A custom small business website with hosting and monthly updates. Twelve-month initial term."
+      "description": "A custom small business website with hosting and monthly updates. Monthly plan from $99, with two months free on yearly engagement."
     }
   }
   </script>
@@ -332,6 +332,13 @@
     .fact strong { display: block; font-size: 18px; font-weight: 800; letter-spacing: -.035em; }
     .fact span { color: var(--muted); display: block; font-size: 12px; margin-top: 4px; }
 
+    .origin { background: #f9f3e7; border-bottom: 1px solid var(--line); border-top: 1px solid var(--line); }
+    .origin-grid { align-items: center; display: grid; gap: 70px; grid-template-columns: .92fr 1.08fr; }
+    .origin-art { background: var(--white); border: 1px solid rgba(17, 19, 23, .1); border-radius: 16px; box-shadow: var(--shadow-soft); overflow: hidden; padding: 10px; transform: rotate(-1deg); }
+    .origin-art img { border-radius: 10px; width: 100%; }
+    .origin-caption { color: #7b614b; font-size: 11px; font-weight: 700; letter-spacing: .06em; margin-top: 12px; text-transform: uppercase; }
+    .origin .section-copy { margin-top: 24px; }
+
     .showcase { background: var(--ink); color: var(--white); overflow: hidden; }
     .showcase .eyebrow { color: #9eb1ff; }
     .showcase-header { align-items: end; display: flex; gap: 70px; justify-content: space-between; }
@@ -529,7 +536,7 @@
       .showcase-header { align-items: start; flex-direction: column; gap: 26px; }
       .showcase-grid { grid-template-columns: 1fr 1fr; }
       .showcase-grid .work-card:last-child { grid-column: 1 / -1; width: calc(50% - 9px); }
-      .process-grid, .pricing-grid, .faq-grid, .contact-grid { gap: 56px; grid-template-columns: 1fr; }
+      .origin-grid, .process-grid, .pricing-grid, .faq-grid, .contact-grid { gap: 56px; grid-template-columns: 1fr; }
       .process-copy { position: static; }
       .pricing .section-heading { max-width: 12ch; }
       .contact h2 { max-width: 13ch; }
@@ -561,6 +568,7 @@
       .showcase-grid { grid-template-columns: 1fr; }
       .showcase-grid .work-card:last-child { grid-column: auto; width: 100%; }
       .work-screen { min-height: 430px; }
+      .origin-art { transform: none; }
       .outcomes-intro { gap: 24px; grid-template-columns: 1fr; }
       .outcome-grid { grid-template-columns: 1fr; }
       .outcome, .outcome:nth-child(even) { border-right: 0; min-height: 0; padding: 34px 0; }
@@ -607,6 +615,7 @@
         <span>MURUS MARE</span>
       </a>
       <nav class="nav-links" aria-label="Main navigation">
+        <a href="#origin">Origin</a>
         <a href="#examples">Examples</a>
         <a href="#process">Process</a>
         <a href="#pricing">Pricing</a>
@@ -616,6 +625,7 @@
       <details class="menu">
         <summary>Menu</summary>
         <nav class="menu-panel" aria-label="Mobile navigation">
+          <a href="#origin">Origin</a>
           <a href="#examples">Examples</a>
           <a href="#process">Process</a>
           <a href="#pricing">Pricing</a>
@@ -630,16 +640,16 @@
     <section class="hero" id="top">
       <div class="shell hero-grid">
         <div>
-          <p class="eyebrow">Websites for small businesses</p>
-          <h1>A custom website. <span>$99 a month.</span></h1>
-          <p class="hero-copy">We design, build, host, and update a five-page website around your business. <strong>You see the homepage before you pay.</strong></p>
+          <p class="eyebrow">A breeze from the Mediterranean</p>
+          <h1>Websites with salt air and sharp edges. <span>$99 a month.</span></h1>
+          <p class="hero-copy">Murus Mare is a small web studio from Jijel, Algeria, where the mountains meet the Mediterranean. We design, build, host, and update calm, useful five-page websites for small businesses worldwide. <strong>You see the homepage before you pay.</strong></p>
           <div class="hero-actions">
             <a class="button" href="#contact">Get my free homepage</a>
             <a class="button secondary" href="#examples">See example directions</a>
           </div>
           <ul class="hero-note">
             <li>No setup fee</li>
-            <li>12-month initial term</li>
+            <li>Two months free yearly</li>
             <li>Five founding spots</li>
           </ul>
         </div>
@@ -680,8 +690,24 @@
       <div class="shell facts-grid">
         <div class="fact"><strong>5 pages</strong><span>Built around your business</span></div>
         <div class="fact"><strong>7 business days</strong><span>Typical launch after approval</span></div>
-        <div class="fact"><strong>Hosting included</strong><span>SSL and monitoring too</span></div>
-        <div class="fact"><strong>Monthly updates</strong><span>One small batch each month</span></div>
+        <div class="fact"><strong>Jijel, Algeria</strong><span>Established on the Mediterranean</span></div>
+        <div class="fact"><strong>Yearly saves $198</strong><span>Two months free when paid yearly</span></div>
+      </div>
+    </section>
+
+
+    <section class="section origin" id="origin">
+      <div class="shell origin-grid">
+        <figure class="origin-art">
+          <img src="assets/jijel-mediterranean-oil-painting.svg" alt="Oil-painting style illustration of Jijel, Algeria on the Mediterranean coast" loading="lazy">
+          <figcaption class="origin-caption">Established in Jijel, Algeria · Working worldwide</figcaption>
+        </figure>
+        <div>
+          <p class="eyebrow">Where we work from</p>
+          <h2 class="section-heading">Built beside the sea, sent across the world.</h2>
+          <p class="section-copy">Murus Mare was established in Jijel, Algeria, on the Mediterranean coast. The name carries that feeling: stone, sea, wind, patience. We bring the same discipline to small business websites: clear words, sturdy pages, quiet maintenance, and no theatre.</p>
+          <p class="section-copy">You do not need a nearby agency with a glass office. You need someone who can understand the business, make the next step obvious, and keep the site alive after launch.</p>
+        </div>
       </div>
     </section>
 
@@ -797,11 +823,12 @@
         <div>
           <p class="eyebrow">Founding client offer</p>
           <h2 class="section-heading">One clear plan. No agency-sized invoice.</h2>
-          <p class="pricing-intro">The first five small businesses can lock in the founding rate. In return, we ask for honest feedback and permission to share the finished website in our portfolio.</p>
+          <p class="pricing-intro">The first five small businesses can lock in the founding rate. Pay monthly at $99, or choose a yearly engagement and get two months free. In return, we ask for honest feedback and permission to share the finished website in our portfolio.</p>
           <ul class="pricing-points">
             <li>Your homepage preview is free</li>
             <li>Your plan starts only when you approve it</li>
             <li>Your domain and business content stay yours</li>
+            <li>Yearly engagement: $990 instead of $1,188</li>
           </ul>
           <p class="exclusions">This plan is for informational and lead-generation websites. Online stores, custom software, paid advertising, and daily content management need separate pricing.</p>
         </div>
@@ -824,7 +851,7 @@
             <li>Domain connection support</li>
             <li>Simple traffic reporting</li>
           </ul>
-          <p class="price-copy">No setup fee. The initial term is 12 months, which is $1,188 in the first year. After that, continue month to month at the same founding rate or request a copy of the website files.</p>
+          <p class="price-copy">No setup fee. Pay monthly at $99, or commit yearly and pay $990 for the first 12 months, two months free compared with monthly billing. After the first year, continue month to month at the same founding rate or request a copy of the website files.</p>
           <a class="button" href="#contact">Request my free homepage</a>
         </div>
       </div>
@@ -867,11 +894,11 @@
         <div class="faq">
           <details>
             <summary>Why is the price only $99 a month?</summary>
-            <p>We are opening five founding-client spots at a reduced rate while we build the Murus Mare portfolio. In exchange, we ask for honest feedback and permission to show the finished website.</p>
+            <p>We are opening five founding-client spots at a reduced rate while we build the Murus Mare portfolio. The yearly option includes two months free because longer engagements give us room to keep the site maintained properly, not just launch it and disappear.</p>
           </details>
           <details>
             <summary>When does payment start?</summary>
-            <p>Only after you approve the homepage preview. Approval starts the 12-month plan. We do not ask for card details or a contract before you see the design.</p>
+            <p>Only after you approve the homepage preview. You can pay monthly at $99 or choose the yearly engagement at $990. We do not ask for card details or a contract before you see the design.</p>
           </details>
           <details>
             <summary>What if I do not like the preview?</summary>
@@ -887,7 +914,7 @@
           </details>
           <details>
             <summary>What happens after 12 months?</summary>
-            <p>You can continue month to month at the same founding rate or request a copy of the website files. Your domain and business content remain yours.</p>
+            <p>You can continue month to month at the same founding rate, renew yearly, or request a copy of the website files. Your domain and business content remain yours.</p>
           </details>
           <details>
             <summary>Do you only work with businesses in one country?</summary>
@@ -930,7 +957,7 @@
   <footer>
     <div class="shell footer-grid">
       <div class="footer-brand"><span class="brand-mark" aria-hidden="true"><span></span><span></span></span>MURUS MARE</div>
-      <span>Custom websites for small businesses worldwide.</span>
+      <span>Small business websites from the Mediterranean coast.</span>
       <span>Jijel, Algeria · <a href="mailto:igil@murusmare.com">igil@murusmare.com</a></span>
     </div>
   </footer>
