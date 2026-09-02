@@ -4,19 +4,25 @@ Static landing page for https://murusmare.com.
 
 ## Positioning
 
-Murus Mare offers Website Care + Local Growth Support for US small businesses whose websites exist but are outdated, neglected, unclear, or not converting enough visitors into calls/quote requests. The core plan is $149/month and includes:
+Murus Mare offers websites, hosting, domain setup, professional email, maintenance, and support for Algerian companies that need a credible online presence without managing the technical work themselves. The founding plan is 9 900 DZD/month and includes:
 
-- Website support and maintenance
-- Hosting help
-- Domain and email help
-- One monthly SEO content piece
-- Small website fixes
+- Custom five-page website
+- Hosting, SSL, monitoring, and maintenance
+- Domain and DNS connection support
+- Professional email setup
+- One monthly batch of small updates
+- Simple traffic reporting
+- 24/7 support for critical incidents
 
-Growth add-ons include local SEO and Google Business Profile work, ads and lead generation, landing pages, automations, analytics, conversion tracking, content expansion, and custom builds.
+The page is written in French and targets Algerian SMEs, agencies, clinics, restaurants, service companies, and professional firms.
+
+## Brand story
+
+The copy reuses the earlier Murus Mare origin story: the name comes from Jijel, an old Mediterranean city described with a wall extending into the sea. The metaphor is that a business website should hold like that wall: solid, visible, maintained, and always there when customers look for the company.
 
 ## Design direction
 
-The page uses a bright Jijel/Algerian coastline-inspired palette: white limestone, Mediterranean sea blue, sky blue, foam, and subtle sand. The copy is direct and outcome-oriented: keep the website updated, trustworthy, and turning visitors into calls without positioning the service as boring maintenance.
+The page uses a bright Jijel/Algerian coastline-inspired palette: white limestone, Mediterranean sea blue, sky blue, foam, and subtle sand. The copy is direct and outcome-oriented: make the business look credible, make contact easy, and remove hosting/domain/email/support headaches.
 
 ## Runtime
 
