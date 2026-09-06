@@ -75,15 +75,15 @@
     .skip-link {
       background: var(--white);
       color: var(--ink);
-      left: 12px;
+      left: -999px;
       padding: 10px 14px;
       position: fixed;
-      top: -80px;
+      top: 12px;
       z-index: 100;
     }
-    .skip-link:focus { top: 12px; }
+    .skip-link:focus { left: 12px; }
     .shell { margin: 0 auto; width: min(1180px, calc(100% - 48px)); }
-    .section { padding: 112px 0; }
+    .section { padding: 112px 0; scroll-margin-top: 84px; }
     .eyebrow {
       align-items: center;
       color: var(--blue);
@@ -138,6 +138,11 @@
     .button.secondary:hover { background: #f0f2f7; border-color: #cbd0db; box-shadow: none; }
     .button.dark { background: var(--ink); border-color: var(--ink); }
     .button.dark:hover { background: var(--ink-2); border-color: var(--ink-2); }
+    .button.whatsapp { background: #17b35f; border-color: #17b35f; color: var(--white); }
+    .button.whatsapp::after { content: "↗"; }
+    .button.whatsapp:hover { background: #11964f; border-color: #11964f; box-shadow: 0 9px 22px rgba(23, 179, 95, .22); }
+    .button.muted { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.18); color: var(--white); }
+    .button.muted:hover { background: rgba(255,255,255,.16); border-color: rgba(255,255,255,.28); box-shadow: none; }
 
     header {
       backdrop-filter: blur(18px);
@@ -233,13 +238,14 @@
       letter-spacing: -.065em;
       line-height: .99;
       margin-top: 20px;
-      max-width: 9.6ch;
+      max-width: 12.8ch;
     }
     .hero h1 span { color: var(--blue); }
     .hero h1 .price-line { display: block; font-size: .68em; letter-spacing: -.045em; line-height: 1.08; margin-top: 10px; white-space: nowrap; }
     .hero-copy { color: var(--muted); font-size: 19px; line-height: 1.62; margin-top: 28px; max-width: 55ch; }
     .hero-copy strong { color: var(--ink); font-weight: 700; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .quick-proof { color: #4d5564; font-size: 13px; font-weight: 700; line-height: 1.55; margin-top: 16px; max-width: 52ch; }
     .hero-note { align-items: center; color: var(--muted); display: flex; flex-wrap: wrap; font-size: 12px; font-weight: 600; gap: 8px 14px; list-style: none; margin-top: 18px; }
     .hero-note li { align-items: center; display: inline-flex; gap: 6px; }
     .hero-note li::before { color: var(--blue); content: "✓"; font-weight: 800; }
@@ -406,6 +412,25 @@
     .outcome h3 { font-size: 26px; font-weight: 700; letter-spacing: -.045em; line-height: 1.15; margin-top: 26px; }
     .outcome p { color: var(--muted); font-size: 14px; margin-top: 11px; max-width: 43ch; }
 
+    .niches { background: #f9f3e7; border-top: 1px solid var(--line); }
+    .niche-header { align-items: end; display: flex; gap: 70px; justify-content: space-between; }
+    .niche-header .section-copy { max-width: 49ch; }
+    .niche-grid { display: grid; gap: 16px; grid-template-columns: repeat(5, 1fr); margin-top: 52px; }
+    .niche-card {
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(17, 19, 23, .1);
+      border-radius: 12px;
+      box-shadow: var(--shadow-soft);
+      min-height: 245px;
+      padding: 24px;
+      transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+    }
+    .niche-card:hover { border-color: rgba(49,87,245,.35); box-shadow: var(--shadow); transform: translateY(-4px); }
+    .niche-card span { color: var(--blue); display: block; font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .niche-card h3 { font-size: 22px; font-weight: 700; letter-spacing: -.045em; line-height: 1.12; margin-top: 18px; }
+    .niche-card p { color: #636061; font-size: 13px; line-height: 1.58; margin-top: 12px; }
+    .niche-note { color: #716758; font-size: 11px; font-weight: 700; margin-top: 22px; }
+
     .process { background: var(--paper); border-bottom: 1px solid var(--line); border-top: 1px solid var(--line); }
     .process-grid { display: grid; gap: 80px; grid-template-columns: .72fr 1.28fr; }
     .process-copy { position: sticky; top: 116px; align-self: start; }
@@ -485,7 +510,7 @@
     .faq details[open] summary::after { content: "−"; }
     .faq details p { color: var(--muted); font-size: 14px; max-width: 65ch; padding: 0 42px 24px 0; }
 
-    .contact { background: var(--ink); color: var(--white); overflow: hidden; padding: 110px 0; position: relative; }
+    .contact { background: var(--ink); color: var(--white); overflow: hidden; padding: 128px 0 110px; position: relative; scroll-margin-top: 84px; }
     .contact::before {
       background: var(--blue);
       border-radius: 50%;
@@ -502,8 +527,11 @@
     .contact .eyebrow { color: #aebcff; }
     .contact h2 { font-size: clamp(44px, 5.8vw, 74px); font-weight: 700; letter-spacing: -.06em; line-height: 1.02; margin-top: 20px; max-width: 10ch; }
     .contact-copy { color: #aeb3bd; font-size: 16px; margin-top: 24px; max-width: 43ch; }
-    .contact-email { color: var(--white); display: inline-block; font-size: 14px; font-weight: 700; margin-top: 24px; text-underline-offset: 5px; }
+    .contact-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+    .contact-email { color: var(--white); display: inline-block; font-size: 14px; font-weight: 700; margin-top: 22px; text-underline-offset: 5px; }
     .contact form { background: var(--white); border-radius: 12px; color: var(--ink); display: grid; gap: 18px; padding: 38px; }
+    .success-message { background: #eef7db; border: 1px solid #d9e9bd; border-radius: 10px; color: #36570f; display: none; font-size: 13px; font-weight: 700; line-height: 1.55; padding: 14px 16px; }
+    body.submitted .success-message { display: block; }
     .field-row { display: grid; gap: 16px; grid-template-columns: 1fr 1fr; }
     label { display: block; font-size: 11px; font-weight: 800; letter-spacing: .05em; margin-bottom: 7px; text-transform: uppercase; }
     input, textarea {
@@ -519,6 +547,7 @@
     input { min-height: 50px; }
     textarea { min-height: 118px; resize: vertical; }
     input:focus, textarea:focus { background: var(--white); border-color: var(--blue); box-shadow: 0 0 0 3px rgba(49,87,245,.12); }
+    .response-note { color: #3b4555; font-size: 12px; font-weight: 800; margin: -2px 0 2px; }
     .form-note { color: var(--muted); font-size: 10px; text-align: center; }
     .contact form .button { border: 0; cursor: pointer; width: 100%; }
 
@@ -534,9 +563,11 @@
       .hero-grid { gap: 62px; grid-template-columns: 1fr; }
       .hero h1 { max-width: 12ch; }
       .preview-stage { margin: 0 auto; width: min(650px, 100%); }
-      .showcase-header { align-items: start; flex-direction: column; gap: 26px; }
+      .showcase-header, .niche-header { align-items: start; flex-direction: column; gap: 26px; }
       .showcase-grid { grid-template-columns: 1fr 1fr; }
       .showcase-grid .work-card:last-child { grid-column: 1 / -1; width: calc(50% - 9px); }
+      .niche-grid { grid-template-columns: repeat(2, 1fr); }
+      .niche-card:last-child { grid-column: 1 / -1; min-height: 0; }
       .origin-grid, .process-grid, .pricing-grid, .faq-grid, .contact-grid { gap: 56px; grid-template-columns: 1fr; }
       .process-copy { position: static; }
       .pricing .section-heading { max-width: 12ch; }
@@ -568,6 +599,8 @@
       .fact:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
       .showcase-grid { grid-template-columns: 1fr; }
       .showcase-grid .work-card:last-child { grid-column: auto; width: 100%; }
+      .niche-grid { grid-template-columns: 1fr; }
+      .niche-card, .niche-card:last-child { grid-column: auto; min-height: 0; }
       .work-screen { min-height: 430px; }
       .origin-art { transform: none; }
       .outcomes-intro { gap: 24px; grid-template-columns: 1fr; }
@@ -618,20 +651,22 @@
       <nav class="nav-links" aria-label="Navigation principale">
         <a href="#origin">Origine</a>
         <a href="#examples">Exemples</a>
+        <a href="#niches">Métiers</a>
         <a href="#process">Méthode</a>
         <a href="#pricing">Tarifs</a>
         <a href="#faq">FAQ</a>
-        <a class="button" href="#contact">Recevoir ma page d’accueil</a>
+        <a class="button whatsapp" href="https://wa.me/213652664025?text=Bonjour%20Murus%20Mare%2C%20je%20veux%20recevoir%20une%20proposition%20de%20page%20d%E2%80%99accueil%20offerte%20pour%20mon%20entreprise." target="_blank" rel="noopener">WhatsApp</a>
       </nav>
       <details class="menu">
         <summary>Menu</summary>
         <nav class="menu-panel" aria-label="Navigation mobile">
           <a href="#origin">Origine</a>
           <a href="#examples">Exemples</a>
+          <a href="#niches">Métiers</a>
           <a href="#process">Méthode</a>
           <a href="#pricing">Tarifs</a>
           <a href="#faq">FAQ</a>
-          <a class="button" href="#contact">Page d’accueil offerte</a>
+          <a class="button whatsapp" href="https://wa.me/213652664025?text=Bonjour%20Murus%20Mare%2C%20je%20veux%20recevoir%20une%20proposition%20de%20page%20d%E2%80%99accueil%20offerte%20pour%20mon%20entreprise." target="_blank" rel="noopener">WhatsApp</a>
         </nav>
       </details>
     </div>
@@ -642,12 +677,14 @@
       <div class="shell hero-grid">
         <div>
           <p class="eyebrow">Depuis Jijel, pour les entreprises algériennes</p>
-          <h1>Un site web solide, hébergé, maintenu. <span class="price-line">9&nbsp;900&nbsp;DZD&nbsp;/&nbsp;mois.</span></h1>
-          <p class="hero-copy">Murus Mare est un petit studio web basé à Jijel. Nous aidons les entreprises algériennes à avoir une présence en ligne claire : site vitrine, hébergement, nom de domaine, e-mails professionnels, maintenance et support 24/7. <strong>Vous voyez la page d’accueil avant de payer.</strong></p>
+          <h1>Plus d’appels, de réservations et de messages. <span class="price-line">9&nbsp;900&nbsp;DZD&nbsp;/&nbsp;mois.</span></h1>
+          <p class="hero-copy">Murus Mare crée des sites vitrines rapides pour les entreprises algériennes qui vivent des appels, réservations, devis et messages WhatsApp. Site, hébergement, domaine, e-mail pro et maintenance sont inclus. <strong>Vous voyez votre page d’accueil avant de payer.</strong></p>
           <div class="hero-actions">
-            <a class="button" href="#contact">Recevoir ma page d’accueil offerte</a>
+            <a class="button whatsapp" href="https://wa.me/213652664025?text=Bonjour%20Murus%20Mare%2C%20je%20veux%20recevoir%20une%20proposition%20de%20page%20d%E2%80%99accueil%20offerte%20pour%20mon%20entreprise." target="_blank" rel="noopener">Recevoir mon aperçu sur WhatsApp</a>
+            <a class="button secondary" href="#contact">Demander l’aperçu gratuit</a>
             <a class="button secondary" href="#examples">Voir des exemples</a>
           </div>
+          <p class="quick-proof">Réponse humaine, offre claire, aucun paiement avant validation. Pensé pour restaurant, salon, gym, studio photo, auto-école, école privée et PME locale.</p>
           <ul class="hero-note">
             <li>Aucun frais de lancement</li>
             <li>Deux mois offerts en annuel</li>
@@ -692,7 +729,7 @@
         <div class="fact"><strong>5 pages</strong><span>Construites autour de votre activité</span></div>
         <div class="fact"><strong>7 jours ouvrables</strong><span>Lancement typique après validation</span></div>
         <div class="fact"><strong>Jijel, Algérie</strong><span>Ancré sur la Méditerranée</span></div>
-        <div class="fact"><strong>Annuel : 19 800 DZD économisés</strong><span>Deux mois offerts en paiement annuel</span></div>
+        <div class="fact"><strong>Annuel : 2 mois offerts</strong><span>99 000 DZD au lieu de 118 800 DZD</span></div>
       </div>
     </section>
 
@@ -795,6 +832,26 @@
       </div>
     </section>
 
+    <section class="section niches" id="niches">
+      <div class="shell">
+        <div class="niche-header">
+          <div>
+            <p class="eyebrow">Sites adaptés à votre métier</p>
+            <h2 class="section-heading">Le bouton important change selon votre activité.</h2>
+          </div>
+          <p class="section-copy">Un bon site ne dit pas seulement “nous sommes professionnels”. Il répond aux questions que vos clients posent déjà sur WhatsApp, Google Maps et Instagram — puis il les pousse vers l’action la plus naturelle.</p>
+        </div>
+        <div class="niche-grid">
+          <article class="niche-card"><span>Restaurants</span><h3>Menu, horaires, itinéraire, réservation.</h3><p>Vos plats, votre ambiance, vos horaires et un bouton WhatsApp/appel visible pour réserver ou demander une table.</p></article>
+          <article class="niche-card"><span>Salons & beauté</span><h3>Services, tarifs, photos, prise de rendez-vous.</h3><p>Une page claire pour montrer vos prestations, rassurer les clientes et transformer Instagram/Maps en rendez-vous.</p></article>
+          <article class="niche-card"><span>Gyms & studios</span><h3>Abonnements, cours, coachs, inscription.</h3><p>Les visiteurs comprennent les formules, les horaires et peuvent poser une question ou s’inscrire sans chercher.</p></article>
+          <article class="niche-card"><span>Photo & événementiel</span><h3>Portfolio, packs, disponibilités, devis.</h3><p>Une vitrine plus crédible qu’un feed seul, avec les meilleurs travaux et un chemin simple vers le devis.</p></article>
+          <article class="niche-card"><span>Auto-écoles & écoles</span><h3>Programmes, documents, localisation, contact.</h3><p>Parents, élèves ou candidats trouvent vite les infos clés et savent comment démarrer l’inscription.</p></article>
+        </div>
+        <p class="niche-note">Votre métier n’est pas listé ? Le même principe s’applique : une page claire, un contact direct, et une offre qui donne confiance.</p>
+      </div>
+    </section>
+
     <section class="section process" id="process">
       <div class="shell process-grid">
         <div class="process-copy">
@@ -846,7 +903,7 @@
             <li>Site vitrine sur mesure de cinq pages</li>
             <li>Textes retravaillés autour de votre offre</li>
             <li>Design mobile et ordinateur</li>
-            <li>Formulaire de contact ou de devis</li>
+            <li>Bouton WhatsApp + formulaire de contact ou de devis</li>
             <li>Hébergement, SSL et surveillance</li>
             <li>Un lot de petites modifications chaque mois</li>
             <li>Aide nom de domaine et DNS</li>
@@ -855,7 +912,7 @@
             <li>Support 24/7 pour incidents critiques</li>
           </ul>
           <p class="price-copy">Aucun frais de lancement. Payez 9 900 DZD par mois, ou 99 000 DZD pour les 12 premiers mois : deux mois offerts par rapport au paiement mensuel. Après la première année, continuez au même tarif fondateur ou demandez une copie des fichiers du site.</p>
-          <a class="button" href="#contact">Demander ma page d’accueil offerte</a>
+          <a class="button whatsapp" href="https://wa.me/213652664025?text=Bonjour%20Murus%20Mare%2C%20je%20veux%20recevoir%20une%20proposition%20de%20page%20d%E2%80%99accueil%20offerte%20pour%20mon%20entreprise." target="_blank" rel="noopener">Demander mon aperçu WhatsApp</a>
         </div>
       </div>
     </section>
@@ -932,11 +989,16 @@
         <div>
           <p class="eyebrow">Votre page d’accueil offerte</p>
           <h2>Laissez-nous vous montrer ce que nous construirions.</h2>
-          <p class="contact-copy">Parlez-nous de votre entreprise. Nous regardons ce que vous avez déjà et répondons avec une proposition de page d’accueil. Si ce n’est pas une amélioration claire, ne nous engagez pas.</p>
+          <p class="contact-copy">Le plus rapide : envoyez votre activité, votre ville et votre page actuelle sur WhatsApp. Si vous préférez l’e-mail, remplissez le formulaire — nous répondons avec une proposition de page d’accueil.</p>
+          <div class="contact-actions">
+            <a class="button whatsapp" href="https://wa.me/213652664025?text=Bonjour%20Murus%20Mare%2C%20je%20veux%20recevoir%20une%20proposition%20de%20page%20d%E2%80%99accueil%20offerte%20pour%20mon%20entreprise." target="_blank" rel="noopener">Recevoir l’aperçu sur WhatsApp</a>
+            <a class="button muted" href="mailto:igil@murusmare.com">Envoyer un e-mail</a>
+          </div>
           <a class="contact-email" href="mailto:igil@murusmare.com">igil@murusmare.com</a>
         </div>
 
         <form action="https://formsubmit.co/igil@murusmare.com" method="POST">
+          <p class="success-message" role="status">Merci — votre demande est bien partie. Nous répondons rapidement. Pour accélérer, vous pouvez aussi nous écrire sur WhatsApp avec le même message.</p>
           <input type="hidden" name="_subject" value="Nouvelle demande Murus Mare - page d’accueil offerte">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_next" value="https://murusmare.com/?submitted=1#contact">
@@ -947,9 +1009,14 @@
           </div>
           <div class="field-row">
             <div><label for="email">Adresse e-mail</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+            <div><label for="phone">Téléphone / WhatsApp</label><input id="phone" name="phone_or_whatsapp" type="tel" autocomplete="tel" placeholder="+213 … (facultatif)"></div>
+          </div>
+          <div class="field-row">
             <div><label for="website">Site web ou page sociale</label><input id="website" name="website_or_social" type="url" inputmode="url" placeholder="https:// (facultatif)"></div>
+            <div><label for="city">Ville</label><input id="city" name="city" type="text" autocomplete="address-level2" placeholder="Alger, Oran, Jijel…"></div>
           </div>
           <div><label for="message">Que fait l’entreprise ?</label><textarea id="message" name="business_details" placeholder="Que proposez-vous, dans quelle ville, et que doivent faire les visiteurs ensuite ?" required></textarea></div>
+          <p class="response-note">Nous répondons avec une proposition claire. Aucun paiement avant validation de l’aperçu.</p>
           <button class="button" type="submit">Demander ma page d’accueil offerte</button>
           <p class="form-note">Nous utilisons ces informations uniquement pour répondre à votre demande. Pas de newsletter.</p>
         </form>
@@ -964,5 +1031,10 @@
       <span>Jijel, Algérie · <a href="mailto:igil@murusmare.com">igil@murusmare.com</a></span>
     </div>
   </footer>
+  <script>
+    if (new URLSearchParams(window.location.search).get('submitted') === '1') {
+      document.body.classList.add('submitted');
+    }
+  </script>
 </body>
 </html>
