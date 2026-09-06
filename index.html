@@ -1032,8 +1032,18 @@
     </div>
   </footer>
   <script>
-    if (new URLSearchParams(window.location.search).get('submitted') === '1') {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('submitted') === '1') {
       document.body.classList.add('submitted');
+    }
+    if (window.location.hash === '#contact') {
+      window.setTimeout(() => {
+        const contact = document.getElementById('contact');
+        const header = document.querySelector('header');
+        if (!contact || !header) return;
+        const offset = header.getBoundingClientRect().height + 22;
+        window.scrollTo({ top: contact.offsetTop - offset, behavior: 'auto' });
+      }, 80);
     }
   </script>
 </body>
