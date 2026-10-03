@@ -1,6 +1,8 @@
 node_modules
 dist
 .git
-.hermes
-README.md
+.gitignore
+*.log
+.env
+.env.*
 docs
